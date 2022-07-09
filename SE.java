@@ -11,7 +11,7 @@ public class SE {
      * @return either an error string or the answer in string form.
      * @throws AssertionError
      */
-    public static String calculation(String s) throws AssertionError, Exception {
+    public static String calculation(String s) throws Exception {
         String result;
         Expression exp;
         try{
@@ -19,11 +19,9 @@ public class SE {
             .build(); 
               
             result = Double.toString(exp.evaluate());
-        } catch (AssertionError e){
-            return "Error";
         } catch (Exception e){
             return "Error";
-        }
+        } 
         
         return result;
     }

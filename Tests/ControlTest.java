@@ -22,6 +22,10 @@ public class ControlTest {
         Control.setNext("5");
 
         assertEquals("backspace()", "5", Control.backspace());
+
+        Control.clear();
+
+        assertEquals("backspace()", "", Control.backspace());
     }
 
     @Test
@@ -37,7 +41,12 @@ public class ControlTest {
     }
 
     @Test
-    public void solveExp() throws AssertionError, Exception{
+    public void solveExp() throws Exception{
+        Control.clear();
+        Control.saveResult("");
+        assertEquals("solveExp()", "", Control.solveExp());
+        assertEquals("getResult()", "", Control.getResult());
+
         Control.setNext("5*3985/log(((");
 
         assertEquals("solveExp()", "Error", Control.solveExp());

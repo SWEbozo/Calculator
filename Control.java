@@ -55,7 +55,7 @@ public class Control {
      * @return answer in String form.
      * @throws Exception returns error messege and clears result variable.
      */
-    static String solveExp() throws AssertionError, Exception{
+    static String solveExp() throws Exception{
         if(expression.length() == 0){
             return expression;
         }
