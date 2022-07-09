@@ -5,19 +5,22 @@ import net.objecthunter.exp4j.ExpressionBuilder;
  * It takes a string, converts it to an expression, and evaluates it
  */
 public class SE {
-
     /**
      * Method that feeds a string expression into an expression evaluator.
      * @param s A string expression to be solved.
      * @return either an error string or the answer in string form.
-     * @throws Exception
+     * @throws AssertionError
      */
-    public static String calculation(String s) throws Exception {
+    public static String calculation(String s) throws AssertionError, Exception {
         String result;
         Expression exp;
         try{
-            exp = new ExpressionBuilder(s).build();   
+            exp = new ExpressionBuilder(s)
+            .build(); 
+              
             result = Double.toString(exp.evaluate());
+        } catch (AssertionError e){
+            return "Error";
         } catch (Exception e){
             return "Error";
         }
